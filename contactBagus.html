@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e90ff, #00bfff);
+  }
+
+  form {
+    background: #ffffff;
+    padding: 40px;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.8s ease-in-out;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+  }
+
+  legend {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e90ff;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 18px;
+  }
+
+  label {
+    font-size: 14px;
+    color: #333;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+    outline: none;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus {
+    border-color: #1e90ff;
+    box-shadow: 0 0 8px rgba(30, 144, 255, 0.4);
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #1e90ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  input[type="submit"]:hover {
+    background: #187bcd;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 144, 255, 0.4);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<form action="contact.php" method="post">
+  <fieldset>
+    <legend>Contact Us</legend>
+
+    <p>
+      <label>Name :</label>
+      <input type="text" name="name" placeholder="Your Name" required>
+    </p>
+
+    <p>
+      <label>Subject :</label>
+      <input type="text" name="text" placeholder="Subject" required>
+    </p>
+
+    <p>
+      <label>Email :</label>
+      <input type="email" name="email" placeholder="Email Address" required>
+    </p>
+
+    <p>
+      <input type="submit" name="submit" value="Send Message">
+    </p>
+
+  </fieldset>
+</form>
+
+<script>
+  // Efek klik tombol
+  const btn = document.querySelector('input[type="submit"]');
+  btn.addEventListener('click', function() {
+    btn.value = "Sending...";
+  });
+</script>
+
+</body>
+</html>
